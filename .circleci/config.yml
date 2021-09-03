@@ -1,0 +1,25 @@
+version: 2.1
+
+orbs:
+  android: circleci/android@1.0.3
+
+jobs:
+  build-and-test:  
+    executor:
+      name: android/android-machine
+
+    steps:
+      - checkout
+
+      - android/run-tests:
+          test-command: ./gradlew lint testDebug --continue
+
+      - run:
+          name: Assemble debug build
+          command: |
+            ./gradlew assembleDebug    
+
+workflows:
+  android-workflow: 
+    jobs:
+      - build-and-test
