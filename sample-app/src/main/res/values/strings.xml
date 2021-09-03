@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Moonsense Sample App</string>
+    <string name="active_session_count">Active session count</string>
+    <string name="start_new_session">Start new session</string>
+    <string name="stop_all_sessions">Stop all sessions</string>
+    <string name="sessions_empty">0</string>
+</resources>
