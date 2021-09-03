@@ -1,5 +1,7 @@
 # Moonsense Android SDK
 
+[![Maven Central](https://shields.io/maven-central/v/io.moonsense/android-sdk)](https://search.maven.org/artifact/io.moonsense/android-sdk)
+
 ## Introduction
 
 This repository includes a sample app that demonstrates the use of the Moonsense SDK for Android.
