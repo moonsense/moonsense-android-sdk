@@ -7,11 +7,11 @@ This repository includes a sample app that demonstrates the use of the Moonsense
 ## TLDR
 
 - Clone this repository.
-- Generate a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) with `repo` permissions.
-- Add your `username` and `token` on command line like so:
-```bash
-export USERNAME=<username goes here>
-export TOKEN=<token goes here>
+- Generate a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) on Github with `repo` permissions.
+- Add your Github `username` and `token` as a gradle property. The easiest way to do this is to add the following lines to `~/.gradle/gradle.properties`
+```gradle
+gpr.user=<username goes here>
+gpr.key=<token goes here>
 ```
 - Create a public token on the [Moonsense Console](https://console.moonsense.cloud/) for your application.
 - Add the public token to the `sample-app` under `MainApplication.kt`.
@@ -43,19 +43,14 @@ The library has been hosted using [Github Packages](https://github.com/features/
     }
 ```
 
-Since the access to the maven repository is restricted you will need to include your `username` and [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) to reference the SDK library. Details around generating a personal access token can be found [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)). Make sure you grant `repo` access to reference the library. Once you have the `username` and `token` add it to your environment set up using the following commands:
-
-```bash
-export USERNAME=<username goes here>
-export TOKEN=<token goes here>
-```
-
-Alternatively you could add the `username` and `password` to your gradle config using [build environment variables](https://docs.gradle.org/current/userguide/build_environment.html). Make sure that the following properties have been added.
+Since the access to the maven repository is restricted you will need to include your `username` and [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) to reference the SDK library. Details around generating a personal access token can be found [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)). Make sure you grant `repo` access to reference the library. Once you have the `username` and `token` add it to your gradle properties. The easiest way is to add the following lines to `~/.gradle/gradle.properties`:
 
 ```gradle
-gpr.user
-gpr.key
+gpr.user=<username goes here>
+gpr.key=<token goes here>
 ```
+
+Alternatively you could add the `username` and `password` to your gradle config using [build environment variables](https://docs.gradle.org/current/userguide/build_environment.html). 
 
 With the credentials in place your are ready to include the following line to add the SDK dependency to your app or module:
 
