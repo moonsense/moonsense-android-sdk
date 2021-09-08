@@ -1,5 +1,3 @@
-import java.net.URI
-
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
@@ -19,7 +17,13 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-
+        maven {
+            url = uri("https://maven.pkg.github.com/moonsense/moonsense-android-sdk")
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+            }
+        }
     }
 }
 

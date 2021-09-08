@@ -1,10 +1,21 @@
 # Moonsense Android SDK
 
-[![Maven Central](https://shields.io/maven-central/v/io.moonsense/android-sdk)](https://search.maven.org/artifact/io.moonsense/android-sdk)
-
 ## Introduction
 
 This repository includes a sample app that demonstrates the use of the Moonsense SDK for Android.
+
+## TLDR
+
+- Clone this repository.
+- Generate a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) with `repo` permissions.
+- Add your `username` and `token` on command line like so:
+```bash
+export USERNAME=<username goes here>
+export TOKEN=<token goes here>
+```
+- Create a public token on the [Moonsense Console](https://console.moonsense.cloud/) for your application.
+- Add the public token to the `sample-app` under `MainApplication.kt`.
+- Run the `sample-app`.
 
 ## Features
 
@@ -18,26 +29,39 @@ The full feature list for this release includes:
 
 ## Integration
 
-The library has been hosted on `mavenCentral`. Make sure that the repo has been added to your gradle config.
+The library has been hosted using [Github Packages](https://github.com/features/packages). If you are reading this you have access to the repo that hosts the SDK library binary. In order to reference the library you need to reference the github maven repository like so:
 
 ```gradle
-repositories {
-    mavenCentral()
-}
+    repositories {
+        maven {
+            url = uri("https://maven.pkg.github.com/moonsense/moonsense-android-sdk")
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+            }
+        }
+    }
 ```
 
-Include the following line to add the SDK dependency to your app or module:
+Since the access to the maven repository is restricted you will need to include your `username` and [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) to reference the SDK library. Details around generating a personal access token can be found [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)). Make sure you grant `repo` access to reference the library. Once you have the `username` and `token` add it to your environment set up using the following commands:
 
-*Kotlin DSL*
+```bash
+export USERNAME=<username goes here>
+export TOKEN=<token goes here>
+```
+
+Alternatively you could add the `username` and `password` to your gradle config using [build environment variables](https://docs.gradle.org/current/userguide/build_environment.html). Make sure that the following properties have been added.
+
+```gradle
+gpr.user
+gpr.key
+```
+
+With the credentials in place your are ready to include the following line to add the SDK dependency to your app or module:
+
 
 ```gradle
 implementation("io.moonsense:android-sdk:0.1.0-alpha2")
-```
-
-*Groovy*
-
-```gradle
-implementation "io.moonsense:android-sdk:0.1.0-alpha2"
 ```
 
 ## Usage
