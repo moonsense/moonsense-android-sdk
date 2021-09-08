@@ -8,7 +8,7 @@ This repository includes a sample app that demonstrates the use of the Moonsense
 
 ## Features
 
-The current latest release of the SDK is `0.1.0-alpha1`. The purpose of this release in a nutshell is to introduce the public API for the Android SDK. The release also serves as a good starting point to test out a very early integration of the SDK into applications and libraries. 
+The current latest release of the SDK is `0.1.0-alpha2`. The purpose of this release in a nutshell is to introduce the public API for the Android SDK. The release also serves as a good starting point to test out a very early integration of the SDK into applications and libraries. 
 
 The full feature list for this release includes:
 - The ability to authenticate with the SDK using the public token provided by the [Moonsense Console](https://console.moonsense.cloud/).
@@ -31,13 +31,13 @@ Include the following line to add the SDK dependency to your app or module:
 *Kotlin DSL*
 
 ```gradle
-implementation("io.moonsense:android-sdk:0.1.0-alpha1")
+implementation("io.moonsense:android-sdk:0.1.0-alpha2")
 ```
 
 *Groovy*
 
 ```gradle
-implementation "io.moonsense:android-sdk:0.1.0-alpha1"
+implementation "io.moonsense:android-sdk:0.1.0-alpha2"
 ```
 
 ## Usage

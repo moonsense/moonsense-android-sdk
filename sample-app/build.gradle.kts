@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    implementation("io.moonsense:android-sdk:${Versions.moonsense}")
+    implementation("io.moonsense:android-sdk:${AppConfig.versionName}")
     implementation("androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}")
     testImplementation("junit:junit:${Versions.junit}")
     androidTestImplementation("androidx.test.ext:junit:${Versions.junitAndroidX}")
