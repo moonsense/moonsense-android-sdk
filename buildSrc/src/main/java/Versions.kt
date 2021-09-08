@@ -10,5 +10,4 @@ object Versions {
     const val junitAndroidX = "1.1.3"
     const val espressoCore = "3.4.0"
     const val constraintLayout = "2.1.0"
-    const val squareWireRuntime = "3.7.0"
 }
