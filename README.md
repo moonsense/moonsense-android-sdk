@@ -7,7 +7,7 @@ This repository includes a sample app that demonstrates the use of the Moonsense
 ## TLDR
 
 - Clone this repository.
-- Generate a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) on Github with `repo` permissions.
+- Generate a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) on Github with `read:packages` permissions.
 - Add your Github `username` and `token` as a gradle property. The easiest way to do this is to add the following lines to `~/.gradle/gradle.properties`
 ```gradle
 gpr.user=<username goes here>
@@ -43,7 +43,7 @@ The library has been hosted using [Github Packages](https://github.com/features/
     }
 ```
 
-Since the access to the maven repository is restricted you will need to include your `username` and [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) to reference the SDK library. Details around generating a personal access token can be found [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)). Make sure you grant `repo` access to reference the library. Once you have the `username` and `token` add it to your gradle properties. The easiest way is to add the following lines to `~/.gradle/gradle.properties`:
+Since the access to the maven repository is restricted you will need to include your `username` and [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) to reference the SDK library. Details around generating a personal access token can be found [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)). Make sure you grant `read:packages` access to reference the library. Once you have the `username` and `token` add it to your gradle properties. The easiest way is to add the following lines to `~/.gradle/gradle.properties`:
 
 ```gradle
 gpr.user=<username goes here>
