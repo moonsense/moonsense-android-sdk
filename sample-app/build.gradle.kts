@@ -41,7 +41,6 @@ android {
 
 dependencies {
     implementation("io.moonsense:android-sdk:${AppConfig.versionName}")
-    implementation("com.squareup.wire:wire-runtime:${Versions.squareWireRuntime}")
     implementation("androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}")
     testImplementation("junit:junit:${Versions.junit}")
     androidTestImplementation("androidx.test.ext:junit:${Versions.junitAndroidX}")

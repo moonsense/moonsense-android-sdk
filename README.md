@@ -59,12 +59,6 @@ With the credentials in place your are ready to include the following line to ad
 implementation("io.moonsense:android-sdk:0.1.0-alpha2")
 ```
 
-Note that the SDK also depends on the square wire runtime. We have to manually add it in as dependency as well:
-
-```gradle
-implementation("com.squareup.wire:wire-runtime:3.7.0")
-```
-
 ## Usage
 
 The SDK needs to be initialized before it can be used. Use the `initialize()` method in either an `Application.onCreate()` or `Activity.onCreate()` to prepare the SDK for recording. The `initialize()` call expects a `publicToken` that can be generated using the [Moonsense Console](https://console.moonsense.cloud/). In order to obtain a token you need to:
