@@ -22,4 +22,5 @@ jobs:
 workflows:
   android-workflow: 
     jobs:
-      - build-and-test
+      - build-and-test:
+          context: moonsense-global

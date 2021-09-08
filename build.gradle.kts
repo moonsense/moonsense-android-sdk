@@ -20,8 +20,10 @@ allprojects {
         maven {
             url = uri("https://maven.pkg.github.com/moonsense/moonsense-android-sdk")
             credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+                username = project.findProperty("gpr.user") as String?
+                    ?: System.getenv("CI_GITHUB_USERNAME")
+                password = project.findProperty("gpr.key") as String?
+                    ?: System.getenv("CI_GITHUB_ACCESS_TOKEN")
             }
         }
     }
