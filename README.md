@@ -17,15 +17,11 @@ gpr.key=<token goes here>
 - Add the public token to the `sample-app` under `MainApplication.kt`.
 - Run the `sample-app`.
 
-## Features
+## Version History
 
-The current latest release of the SDK is `0.1.0-alpha2`. The purpose of this release in a nutshell is to introduce the public API for the Android SDK. The release also serves as a good starting point to test out a very early integration of the SDK into applications and libraries. 
+The latest release of the SDK is `0.1.0-alpha2`. Details about the current and past releases can be found below:
 
-The full feature list for this release includes:
-- The ability to authenticate with the SDK using the public token provided by the [Moonsense Console](https://console.moonsense.cloud/).
-- Start a session to collect accelerometer data from the device.
-- Publish the accelerometer data to the Moonsense Cloud.
-- Stop all or individual sessions.
+- [0.1.0-alpha2](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha2)
 
 ## Integration
 
