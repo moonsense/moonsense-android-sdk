@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2021 Moonsense, Inc. All rights reserved.
+  ~ Created by rahul on 9/16/21, 8:46 AM
+  -->
+
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="green">#1FCC5F</color>
+    <color name="transparent">#00000000</color>
+    <color name="darker_gray">#aaaaaa</color>
+    <color name="seekbar_border_incomplete">#797c82</color>
+    <color name="seekbar_background_incomplete">#50a8adb5</color>
+    <color name="seekbar_border_complete">#0f5e02</color>
+    <color name="seekbar_background_complete">#507fc474</color>
+</resources>
