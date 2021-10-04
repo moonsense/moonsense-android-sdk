@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository includes a sample apps that demonstrates the use of the Moonsense SDK for Android.
+This repository includes sample apps that demonstrate the use of the Moonsense SDK for Android.
 
 ## TLDR
 
@@ -58,7 +58,7 @@ implementation("io.moonsense:android-sdk:0.1.0-alpha3")
 
 ## Usage
 
-The SDK needs to be initialized before it can be used. Use the `initialize()` method in either an `Application.onCreate()`/`Activity.onCreate()` to prepare the SDK for recording(in case of a library usage add it to the initialization routine). The `initialize()` call expects a `publicToken` that can be generated using the [Moonsense Console](https://console.moonsense.cloud/). In order to obtain a token you need to:
+The SDK needs to be initialized before it can be used. Use the `initialize()` method in either an `Application.onCreate()`/`Activity.onCreate()` to prepare the SDK for recording. For SDK/library developers you can add `initialize()` to your initialization routine. The `initialize()` call expects a `publicToken` that can be generated using the [Moonsense Console](https://console.moonsense.cloud/). In order to obtain a token you need to:
 
 - Have a valid Moonsense account.
 - Set up a project for the SDK to use. The default can be used in case you do not want to create one.
@@ -72,7 +72,7 @@ Additionally a `MoonsenseCallback` can be registered to provide the caller with 
 This repo includes two sample apps:
 
 - `sample-app` - This sample app demonstrates the use of the Moonsense Android SDK within an application context. The example in this case is quite simple and minimal and can serve as a good starting point for developers looking for a quick integration.
-- `sample-payment-app` - This sample app demonstrates the library usage of the Moonsense Android SDK. Note that the `sample-payment-app` does not directly depend on the Moonsense Android SDK. Instead it includes a dependency to the `sample-payment-sdk` which then packages the Moonsense Android SDK. The app developer here does not have any visibility into the Moonsense Android SDK since they only interface with the `sample-payment-sdk`. The example is useful for library and SDK developers looking to integrate the Moonsense Android SDK.
+- `sample-payment-app` - This sample app demonstrates the library usage of the Moonsense Android SDK. Note that the `sample-payment-app` does not directly depend on the Moonsense Android SDK. Instead it includes a dependency to the `sample-payment-sdk` which then packages the Moonsense Android SDK. The app developer here does not have any visibility into the Moonsense Android SDK as they only interface with the `sample-payment-sdk`. The example is useful for SDK/library developers looking to integrate the Moonsense Android SDK.
 
 ## Terms Of Service
 
