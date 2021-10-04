@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2021 Moonsense, Inc. All rights reserved.
+  ~ Created by rahul on 9/17/21, 1:43 PM
+  -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="32dp" />
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+</layer-list>

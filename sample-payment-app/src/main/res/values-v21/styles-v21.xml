@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2021 Moonsense, Inc. All rights reserved.
+  ~ Created by rahul on 9/21/21, 4:29 PM
+  -->
+
+<resources>
+
+    <style name="AppTheme" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
+
+</resources>

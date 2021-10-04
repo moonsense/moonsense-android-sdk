@@ -1,0 +1,16 @@
+<!--
+  ~ Copyright (c) 2021 Moonsense, Inc. All rights reserved.
+  ~ Created by rahul on 9/16/21, 8:59 AM
+  -->
+
+<resources>
+    <string name="app_name">Moonsense Sample Payment App</string>
+    <string name="shop_title">Cookie Shop</string>
+    <string name="choco_chip">Choco Chip</string>
+    <string name="zero">0</string>
+    <string name="oatmeal_raisin">Oatmeal Raisin</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="tax">Tax</string>
+    <string name="total">Total</string>
+    <string name="buy">Buy</string>
+</resources>

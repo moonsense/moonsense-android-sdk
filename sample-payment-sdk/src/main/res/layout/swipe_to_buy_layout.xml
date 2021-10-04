@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2021 Moonsense, Inc. All rights reserved.
+  ~ Created by rahul on 9/17/21, 2:52 PM
+  -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/swipe_to_buy_frame_layout"
+        android:layout_width="match_parent"
+        android:background="@drawable/seekbar_background"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/swipe_to_buy_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:progress="0"
+            android:text="@string/swipe_to_buy"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/swipe_to_buy_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressDrawable="@color/transparent"
+            android:thumb="@drawable/seekbar_thumb"
+            android:layout_gravity="center"
+            android:progress="0" />
+    </FrameLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/swipe_to_buy_progress_indicator"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/white" />
+</merge>

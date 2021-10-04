@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2021 Moonsense, Inc. All rights reserved.
+  ~ Created by rahul on 9/20/21, 11:50 AM
+  -->
+
+<resources>
+    <string name="total">Total</string>
+    <string name="card">Card</string>
+    <string name="swipe_to_buy">Swipe to buy</string>
+</resources>

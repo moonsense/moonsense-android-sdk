@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2021 Moonsense, Inc. All rights reserved.
+  ~ Created by rahul on 9/16/21, 8:46 AM
+  -->
+
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="background_green">#1FCC5F</color>
+    <color name="background_red">#FFCCCC</color>
+    <color name="darker_gray">#aaaaaa</color>
+</resources>
