@@ -10,6 +10,9 @@
     <color name="green">#1FCC5F</color>
     <color name="transparent">#00000000</color>
     <color name="darker_gray">#aaaaaa</color>
+    <color name="disabled_gray">#69676B</color>
+    <color name="purple">#B780FF</color>
+    <color name="disabled_transparency">#70000000</color>
     <color name="seekbar_border_incomplete">#797c82</color>
     <color name="seekbar_background_incomplete">#50a8adb5</color>
     <color name="seekbar_border_complete">#0f5e02</color>

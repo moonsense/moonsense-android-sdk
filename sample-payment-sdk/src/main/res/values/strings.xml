@@ -7,4 +7,8 @@
     <string name="total">Total</string>
     <string name="card">Card</string>
     <string name="swipe_to_buy">Swipe to buy</string>
+    <string name="card_text_input_hint">Fake Card Number</string>
+    <string name="date_text_input_hint">Fake Exp. Date</string>
+    <string name="cvc_text_input_hint">Fake CVC</string>
+
 </resources>

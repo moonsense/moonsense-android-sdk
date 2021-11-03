@@ -10,5 +10,6 @@
     <color name="red">#FF0000</color>
     <color name="background_green">#1FCC5F</color>
     <color name="background_red">#FFCCCC</color>
+    <color name="button_click_gray">#202020</color>
     <color name="darker_gray">#aaaaaa</color>
 </resources>

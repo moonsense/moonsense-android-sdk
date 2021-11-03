@@ -9,6 +9,7 @@ import android.content.Context
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.SeekBar
@@ -33,6 +34,7 @@ internal class SwipeToBuyView @JvmOverloads constructor(
     // enclosing frame layout.
     private val parentLayout: ViewGroup
     private val textView: TextView
+    private val disabledOverlay: View
     private val progressIndicator: CircularProgressIndicator
     private val mainThreadHandler = Handler(context.mainLooper)
 
@@ -72,6 +74,7 @@ internal class SwipeToBuyView @JvmOverloads constructor(
         seekBar = findViewById(R.id.swipe_to_buy_seekbar)
         parentLayout = findViewById(R.id.swipe_to_buy_frame_layout)
         textView = findViewById(R.id.swipe_to_buy_text_view)
+        disabledOverlay = findViewById(R.id.swipe_to_buy_disabled_overlay)
         progressIndicator = findViewById(R.id.swipe_to_buy_progress_indicator)
         setProperties()
         seekBar.setOnSeekBarChangeListener(onSeekBarChangeListener)
@@ -99,6 +102,10 @@ internal class SwipeToBuyView @JvmOverloads constructor(
 
         // mimic a completion action after a delay.
         onCompleteRunnable?.let { mainThreadHandler.postDelayed(it, LOADING_PROGRESS_DELAY) }
+    }
+
+    fun shouldEnable(value: Boolean) {
+        disabledOverlay.visibility = if (value) View.GONE else View.VISIBLE
     }
 
     fun setOnCompleteRunnable(r: Runnable) {
