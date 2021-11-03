@@ -19,8 +19,9 @@ gpr.key=<token goes here>
 
 ## Version History
 
-The latest release of the SDK is `0.1.0-alpha4`. Details about the current and past releases can be found below:
+The latest release of the SDK is `0.1.0-alpha5`. Details about the current and past releases can be found below:
 
+- [0.1.0-alpha5](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha5)
 - [0.1.0-alpha4](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha4)
 - [0.1.0-alpha3](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha3)
 - [0.1.0-alpha2](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha2)
@@ -54,7 +55,7 @@ With the credentials in place your are ready to include the following line to ad
 
 
 ```gradle
-implementation("io.moonsense:android-sdk:0.1.0-alpha4")
+implementation("io.moonsense:android-sdk:0.1.0-alpha5")
 ```
 
 ## Usage
