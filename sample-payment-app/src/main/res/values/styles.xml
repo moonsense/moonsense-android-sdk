@@ -5,5 +5,5 @@
   -->
 
 <resources>
-    <style name="AppTheme" parent="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+    <style name="AppTheme" parent="@style/Theme.MaterialComponents.NoActionBar"/>
 </resources>

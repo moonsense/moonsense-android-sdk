@@ -30,6 +30,14 @@
             android:thumb="@drawable/seekbar_thumb"
             android:layout_gravity="center"
             android:progress="0" />
+
+        <View
+            android:id="@+id/swipe_to_buy_disabled_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:clickable="true"
+            android:background="@color/disabled_transparency"/>
     </FrameLayout>
 
     <com.google.android.material.progressindicator.CircularProgressIndicator

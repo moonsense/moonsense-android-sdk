@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2021 Moonsense, Inc. All rights reserved.
+  ~ Created by rahul on 9/16/21, 8:46 AM
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:alpha="1.0" android:color="@color/purple" android:state_focused="true"/>
+    <item android:alpha="1.0" android:color="@color/disabled_gray" android:state_hovered="true"/>
+    <item android:alpha="1.0" android:color="@color/disabled_gray" android:state_enabled="false"/>
+    <item android:alpha="1.0" android:color="@color/disabled_gray"/>  <!-- unfocused -->
+</selector>

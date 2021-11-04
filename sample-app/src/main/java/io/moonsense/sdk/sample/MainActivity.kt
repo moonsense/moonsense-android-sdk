@@ -77,7 +77,7 @@ internal class MainActivity : Activity() {
 
     companion object {
         private const val DEFAULT_SESSION_DURATION_SECONDS = 30L
-        private const val DEFAULT_SESSION_LABEL = "android sdk sample"
+        private const val DEFAULT_SESSION_LABEL = "android_sdk_sample"
         private const val KEY_RETAINED_SESSION_COUNT = "session_count"
     }
 }
