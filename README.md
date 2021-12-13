@@ -7,11 +7,12 @@ This repository includes sample apps that demonstrate the use of the Moonsense S
 ## TLDR
 
 - Clone this repository.
-- Generate a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) on Github with `read:packages` permissions.
-- Add your Github `username` and `token` as a gradle property. The easiest way to do this is to add the following lines to `~/.gradle/gradle.properties`
+- Replace the following lines in [build.gradle.kts](https://github.com/moonsense/moonsense-android-sdk/blob/main/build.gradle.kts) with the download token provided to you:
 ```gradle
-gpr.user=<username goes here>
-gpr.key=<token goes here>
+maven {
+    val token = "ADD_TOKEN_HERE"
+    url = uri("https://dl.cloudsmith.io/$token/moonsense/sdk/maven/")
+}
 ```
 - Create a public token on the [Moonsense Console](https://console.moonsense.cloud/) for your application.
 - Add the public token to the `sample-app` under `MainApplication.kt`.
@@ -19,8 +20,9 @@ gpr.key=<token goes here>
 
 ## Version History
 
-The latest release of the SDK is `0.1.0-alpha5`. Details about the current and past releases can be found below:
+The latest release of the SDK is `0.1.0`. Details about the current and past releases can be found below:
 
+- [0.1.0](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0)
 - [0.1.0-alpha5](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha5)
 - [0.1.0-alpha4](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha4)
 - [0.1.0-alpha3](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha3)
@@ -28,34 +30,21 @@ The latest release of the SDK is `0.1.0-alpha5`. Details about the current and p
 
 ## Integration
 
-The library has been hosted using [Github Packages](https://github.com/features/packages). If you are reading this you have access to the repo that hosts the SDK library binary. In order to reference the library you need to reference the github maven repository like so:
+All that is needed to access the SDK is an entitlement token. This token is either provided to you or can be generated via the [Moonsense Console](https://console.moonsense.cloud/). Once you have the generated token, you can add it to your maven config in gradle like so:
 
 ```gradle
-    repositories {
-        maven {
-            url = uri("https://maven.pkg.github.com/moonsense/moonsense-android-sdk")
-            credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
-                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
-            }
-        }
+repositories {
+    maven {
+        val token = "ADD_TOKEN_HERE"
+        url = uri("https://dl.cloudsmith.io/$token/moonsense/sdk/maven/")
     }
+}
 ```
 
-Since the access to the maven repository is restricted you will need to include your `username` and [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) to reference the SDK library. Details around generating a personal access token can be found [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)). Make sure you grant `read:packages` access to reference the library. Once you have the `username` and `token` add it to your gradle properties. The easiest way is to add the following lines to `~/.gradle/gradle.properties`:
+With the repository set up, you can add the SDK dependency to your app or module using the following line:
 
 ```gradle
-gpr.user=<username goes here>
-gpr.key=<token goes here>
-```
-
-Alternatively you could add the `username` and `password` to your gradle config using [build environment variables](https://docs.gradle.org/current/userguide/build_environment.html). 
-
-With the credentials in place your are ready to include the following line to add the SDK dependency to your app or module:
-
-
-```gradle
-implementation("io.moonsense:android-sdk:0.1.0-alpha5")
+implementation("io.moonsense:android-sdk:0.1.0")
 ```
 
 ## Usage
