@@ -11,6 +11,10 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Set the token to download the sdk
+          command: sed -i 's/ADD_TOKEN_HERE/'"$CS_ANDROID_SDK_ENTITLEMENT_TOKEN"'/g' build.gradle.kts
+
       - android/run-tests:
           test-command: ./gradlew lint testDebug --continue
 
