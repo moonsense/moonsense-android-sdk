@@ -18,8 +18,8 @@ allprojects {
         google()
         mavenCentral()
         maven {
-            val token = "ADD_TOKEN_HERE"
-            url = uri("https://dl.cloudsmith.io/$token/moonsense/sdk/maven/")
+            val repoAccessToken = "ADD_TOKEN_HERE"
+            url = uri("https://dl.moonsense.io/$repoAccessToken/sdk/maven")
         }
     }
 }
