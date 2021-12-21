@@ -7,58 +7,55 @@ This repository includes sample apps that demonstrate the use of the Moonsense S
 ## TLDR
 
 - Clone this repository.
-- Replace the following lines in [build.gradle.kts](https://github.com/moonsense/moonsense-android-sdk/blob/main/build.gradle.kts) with the download token provided to you:
+- Replace the following lines in [build.gradle.kts](https://github.com/moonsense/moonsense-android-sdk/blob/main/build.gradle.kts) with the repo access token provided to you:
 ```gradle
 maven {
-    val token = "ADD_TOKEN_HERE"
-    url = uri("https://dl.cloudsmith.io/$token/moonsense/sdk/maven/")
+    val repoAccessToken = "ADD_TOKEN_HERE"
+    url = uri("https://dl.moonsense.io/$repoAccessToken/sdk/maven")
 }
 ```
 - Create a public token on the [Moonsense Console](https://console.moonsense.cloud/) for your application.
-- Add the public token to the `sample-app` under `MainApplication.kt`.
+- Add the public token to the `MainApplication` in `sample-app`.
 - Run the `sample-app`.
 
 ## Version History
 
-The latest release of the SDK is `0.1.0`. Details about the current and past releases can be found below:
+The latest release of the SDK is `0.1.0`. Details about the current and past releases can be found in the [Releases](https://github.com/moonsense/moonsense-android-sdk/releases) section.
 
-- [0.1.0](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0)
-- [0.1.0-alpha5](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha5)
-- [0.1.0-alpha4](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha4)
-- [0.1.0-alpha3](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha3)
-- [0.1.0-alpha2](https://github.com/moonsense/moonsense-android-sdk/releases/tag/0.1.0-alpha2)
 
 ## Integration
 
-All that is needed to access the SDK is an entitlement token. This token is either provided to you or can be generated via the [Moonsense Console](https://console.moonsense.cloud/). Once you have the generated token, you can add it to your maven config in gradle like so:
+All that is needed to download the SDK is a repo access token. This token should have been provided to you. In case you do not have one contact [support@moonsense.io](mailto:support@moonsense.io). Once you have the repo access token, you can add it to your maven config in gradle like so:
 
 ```gradle
 repositories {
     maven {
-        val token = "ADD_TOKEN_HERE"
-        url = uri("https://dl.cloudsmith.io/$token/moonsense/sdk/maven/")
+        val repoAccessToken = "ADD_TOKEN_HERE"
+        url = uri("https://dl.moonsense.io/$repoAccessToken/sdk/maven")
     }
 }
 ```
 
-With the repository set up, you can add the SDK dependency to your app or module using the following line:
+With the repository set up, you can add the SDK dependency to your app/module using the following line:
 
 ```gradle
-implementation("io.moonsense:android-sdk:0.1.0")
+implementation("io.moonsense:android-sdk:<latest_version>")
 ```
 
 ## Usage
 
-The SDK needs to be initialized before it can be used. Use the `initialize()` method in either an `Application.onCreate()`/`Activity.onCreate()` to prepare the SDK for recording. For SDK/library developers you can add `initialize()` to your initialization routine. The `initialize()` call expects a `publicToken` that can be generated using the [Moonsense Console](https://console.moonsense.cloud/). In order to obtain a token you need to:
+The SDK needs to be initialized before use. Use the [initialize()](https://android.sdk-docs.moonsense.io/sdk/io.moonsense.sdk/-moonsense/initialize.html) method in either the `Application.onCreate()` or `Activity.onCreate()` to prepare the SDK for recording. SDK/Library developers can add [initialize()](https://android.sdk-docs.moonsense.io/sdk/io.moonsense.sdk/-moonsense/initialize.html) to their SDK initialization routine. The [initialize()](https://android.sdk-docs.moonsense.io/sdk/io.moonsense.sdk/-moonsense/initialize.html) call expects a `publicToken` generated using the [Moonsense Console](https://console.moonsense.cloud/). In order to obtain a token you need to:
 
 - Have a valid Moonsense account.
 - Set up a project for the SDK to use. The default can be used in case you do not want to create one.
 - Configure an application for the SDK to record to.
-- Once the app is set up, use the `Create token` button to obtain the secret and public token to use. The SDK expects the public token as a part of the `initialize()` call. You can hold on to the secret token to read from the Moonsense Cloud later.
+- Once the app is set up, use the `Create token` button to obtain the secret and public token to use. The SDK expects the public token as a part of the [initialize()](https://android.sdk-docs.moonsense.io/sdk/io.moonsense.sdk/-moonsense/initialize.html) call. You can hold on to the secret token to read from the Moonsense Cloud later.
 
-Once initialized you can use the `startSession()` and `stopAllSessions()` to start and stop recording sessions respectively. If you need a finer control over stopping individual sessions, the `startSession()` call returns a `Session` object that includes a `stopSession()` method.
+Once initialized you can use the [startSession()](https://android.sdk-docs.moonsense.io/sdk/io.moonsense.sdk/-moonsense/start-session.html) and [stopAllSessions()](https://android.sdk-docs.moonsense.io/sdk/io.moonsense.sdk/-moonsense/stop-all-sessions.html) to start and stop recording sessions respectively. If you need a finer control over stopping individual sessions, the [startSession()](https://android.sdk-docs.moonsense.io/sdk/io.moonsense.sdk/-moonsense/start-session.html) call returns a [Session](https://android.sdk-docs.moonsense.io/sdk/io.moonsense.sdk.model/-session/index.html) object that includes a [stopSession()](https://android.sdk-docs.moonsense.io/sdk/io.moonsense.sdk.model/-session/stop-session.html) method.
 
-Additionally a `MoonsenseCallback` can be registered to provide the caller with events from the SDK.
+Additionally, a [MoonsenseCallback](https://android.sdk-docs.moonsense.io/sdk/io.moonsense.sdk.callback/-moonsense-callback/index.html) can be registered to provide the caller with events from the SDK.
+
+The SDK reference can be found at [android.sdk-docs.moonsense.io](https://android.sdk-docs.moonsense.io/).
 
 This repo includes two sample apps:
 
