@@ -4,8 +4,8 @@
  */
 
 object Versions {
-    const val gradleTools = "7.0.4"
-    const val kotlinVersion = "1.5.31"
+    const val gradleTools = "7.1.0"
+    const val kotlinVersion = "1.6.0"
     const val junit = "4.13.2"
     const val junitAndroidX = "1.1.3"
     const val espressoCore = "3.4.0"
