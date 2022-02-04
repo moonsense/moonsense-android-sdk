@@ -57,9 +57,8 @@ internal class MainActivity : Activity() {
             // this call also returns a session object containing
             // additional information about the started session
             Moonsense.startSession(
-                DEFAULT_SESSION_DURATION_SECONDS,
-                TimeUnit.SECONDS,
-                listOf(DEFAULT_SESSION_LABEL)
+                TimeUnit.SECONDS.toMillis(DEFAULT_SESSION_DURATION_SECONDS),
+                labels = listOf(DEFAULT_SESSION_LABEL)
             )
         }
 
