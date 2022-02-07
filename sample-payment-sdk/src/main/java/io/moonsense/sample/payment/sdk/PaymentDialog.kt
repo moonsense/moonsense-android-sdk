@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 import android.widget.FrameLayout
+import io.moonsense.sdk.config.SessionConfig
 import java.lang.StringBuilder
 
 /**
@@ -33,7 +34,8 @@ import java.lang.StringBuilder
 class PaymentDialog(private val paymentListener: PaymentListener) :
     BottomSheetDialogFragment() {
 
-    private var session: Session? = null
+    private var sessionWithAllSensors: Session? = null
+    private var sessionWithTypingSensors: Session? = null
     private lateinit var swipeToBuyView: SwipeToBuyView
 
     private var isCardValid = false
@@ -132,17 +134,28 @@ class PaymentDialog(private val paymentListener: PaymentListener) :
                 dialog?.findViewById(R.id.design_bottom_sheet) as FrameLayout
             BottomSheetBehavior.from(bottomSheet).state = BottomSheetBehavior.STATE_EXPANDED
         }
-        session = Moonsense.startSession(
-            1,
-            TimeUnit.HOURS,
-            listOf(PAYMENT_SDK_LABEL)
+
+        // start a long running session with the typing sensors
+        // specified in the SDKConfig during initialization
+        sessionWithTypingSensors = Moonsense.startSession(
+            TimeUnit.HOURS.toMillis(TYPING_SESSION_DURATION_HOURS),
+            labels = listOf(PAYMENT_SDK_LABEL_TYPING_SENSORS)
+        )
+
+        // start a shorter session recording all sensors
+        sessionWithAllSensors = Moonsense.startSession(
+            TimeUnit.SECONDS.toMillis(ALL_SENSORS_SESSION_DURATION_SECONDS),
+            // empty config records all sensors
+            SessionConfig(),
+            listOf(PAYMENT_SDK_LABEL_ALL_SENSORS)
         )
         arguments?.getFloat(ARG_TOTAL_PRICE)?.let {
             val formattedPrice = "$ $it"
             totalPrice.text = formattedPrice
         }
         view.findViewById<View>(R.id.close_button).setOnClickListener {
-            session?.stopSession()
+            sessionWithTypingSensors?.stopSession()
+            sessionWithAllSensors?.stopSession()
             paymentListener.onDismissed()
             dismiss()
         }
@@ -153,7 +166,8 @@ class PaymentDialog(private val paymentListener: PaymentListener) :
 
         val swipeToBuyView = view.findViewById<SwipeToBuyView>(R.id.swipe_to_buy_view)
         swipeToBuyView.setOnCompleteRunnable {
-            session?.stopSession()
+            sessionWithTypingSensors?.stopSession()
+            sessionWithAllSensors?.stopSession()
             paymentListener.onComplete()
             dismiss()
         }
@@ -202,7 +216,8 @@ class PaymentDialog(private val paymentListener: PaymentListener) :
 
     override fun onCancel(dialog: DialogInterface) {
         super.onCancel(dialog)
-        session?.stopSession()
+        sessionWithTypingSensors?.stopSession()
+        sessionWithAllSensors?.stopSession()
         paymentListener.onDismissed()
     }
 
@@ -227,7 +242,10 @@ class PaymentDialog(private val paymentListener: PaymentListener) :
 
         private const val PAYMENT_FRAGMENT_TAG = "payment_fragment_dialog"
         private const val ARG_TOTAL_PRICE = "total_price"
-        private const val PAYMENT_SDK_LABEL = "android_payment_sdk_sample"
+        private const val PAYMENT_SDK_LABEL_ALL_SENSORS = "android_payment_sdk_sample_all_sensors"
+        private const val PAYMENT_SDK_LABEL_TYPING_SENSORS = "android_payment_sdk_sample_typing_sensors"
+        private const val TYPING_SESSION_DURATION_HOURS = 1L
+        private const val ALL_SENSORS_SESSION_DURATION_SECONDS = 30L
 
         private const val CARD_MAX_CHARS = 19
         private const val CARD_SEPARATOR_MOD = 5

@@ -9,6 +9,8 @@ import android.content.Context
 import android.widget.Toast
 import io.moonsense.sdk.Moonsense
 import io.moonsense.sdk.callback.MoonsenseCallback
+import io.moonsense.sdk.config.SDKConfig
+import io.moonsense.sdk.config.SensorType
 import io.moonsense.sdk.exception.MoonsenseException
 import io.moonsense.sdk.model.Session
 
@@ -25,7 +27,21 @@ object Payment {
         Moonsense.initialize(
             context,
             "ADD PUBLIC TOKEN HERE ..",
-            object : MoonsenseCallback {
+            SDKConfig(
+                // capture sensors that produce data at 50 Hz
+                globalSamplingRate = 50,
+                // generate bundles every half second
+                bundleGenerationInterval = 500L,
+                // only specify typing sensors when starting a session
+                // with no session config
+                sensorTypes = listOf(
+                    SensorType.TOUCH,
+                    SensorType.KEY_PRESS,
+                    SensorType.FOCUS_CHANGE,
+                    SensorType.TEXT_CHANGE
+                )
+            ),
+            moonsenseCallback = object : MoonsenseCallback {
                 override fun onError(ex: MoonsenseException) {
                     Toast.makeText(
                         context,
