@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2021 Moonsense, Inc. All rights reserved.
- * Created by rahul on 9/16/21, 8:46 AM
- */
-
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -13,7 +8,7 @@ android {
     buildToolsVersion = AppConfig.buildToolsVersion
 
     defaultConfig {
-        applicationId = "io.moonsense.sample.payment.app"
+        applicationId = "io.moonsense.sdk.core.sample"
         minSdk = AppConfig.minSdkVersion
         targetSdk = AppConfig.targetSdkVersion
         versionCode = AppConfig.versionCode
@@ -29,6 +24,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+        getByName("debug") {
+            isMinifyEnabled = false
+            isDebuggable = true
+        }
     }
 
     compileOptions {
@@ -41,7 +40,14 @@ android {
 }
 
 dependencies {
-    implementation(project(":sample-payment-sdk"))
-    implementation("com.google.android.material:material:${Versions.material}")
+    implementation("io.moonsense:android-core-sdk:${AppConfig.versionName}")
+    implementation("com.squareup.wire:wire-runtime:${Versions.squareWireRuntime}")
+    implementation("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
+    implementation("com.squareup.retrofit2:converter-gson:${Versions.retrofit}")
+    implementation("com.google.code.gson:gson:${Versions.gson}")
+    implementation("com.squareup.okhttp3:mockwebserver:${Versions.mockWebServer}")
     implementation("androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}")
+    testImplementation("junit:junit:${Versions.junit}")
+    androidTestImplementation("androidx.test.ext:junit:${Versions.junitAndroidX}")
+    androidTestImplementation("androidx.test.espresso:espresso-core:${Versions.espressoCore}")
 }

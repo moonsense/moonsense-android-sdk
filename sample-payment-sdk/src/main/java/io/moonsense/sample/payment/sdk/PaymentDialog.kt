@@ -46,7 +46,13 @@ class PaymentDialog(private val paymentListener: PaymentListener) :
         override fun afterTextChanged(s: Editable?) {
             super.afterTextChanged(s)
             s ?: return
-            if (isFormatted(s, CARD_MAX_CHARS, CARD_SEPARATOR_MOD, CARD_SEPARATOR)) {
+            if (isFormatted(
+                    s = s,
+                    totalLen = CARD_MAX_CHARS,
+                    separatorMod = CARD_SEPARATOR_MOD,
+                    separator = CARD_SEPARATOR
+                )
+            ) {
                 isCardValid = s.length == CARD_MAX_CHARS
                 shouldEnableSwipeToBuy()
                 return
@@ -83,7 +89,13 @@ class PaymentDialog(private val paymentListener: PaymentListener) :
                 return
             }
 
-            if (isFormatted(s, DATE_MAX_CHARS, DATE_SEPARATOR_MOD, DATE_SEPARATOR)) {
+            if (isFormatted(
+                    s = s,
+                    totalLen = DATE_MAX_CHARS,
+                    separatorMod = DATE_SEPARATOR_MOD,
+                    separator = DATE_SEPARATOR
+                )
+            ) {
                 isDateValid = s.length == DATE_MAX_CHARS
                 shouldEnableSwipeToBuy()
                 return
@@ -149,8 +161,8 @@ class PaymentDialog(private val paymentListener: PaymentListener) :
             SessionConfig(),
             listOf(PAYMENT_SDK_LABEL_ALL_SENSORS)
         )
-        arguments?.getFloat(ARG_TOTAL_PRICE)?.let {
-            val formattedPrice = "$ $it"
+        arguments?.run {
+            val formattedPrice = "$ ${getFloat(ARG_TOTAL_PRICE)}"
             totalPrice.text = formattedPrice
         }
         view.findViewById<View>(R.id.close_button).setOnClickListener {
