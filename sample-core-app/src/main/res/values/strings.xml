@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Moonsense Core Sample App</string>
+    <string name="company_name">Acme</string>
+    <string name="description">Click the record button below to launch an Acme Session</string>
+    <string name="record">Record</string>
+</resources>

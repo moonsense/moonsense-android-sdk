@@ -25,9 +25,9 @@ object Payment {
      */
     fun init(context: Context) {
         Moonsense.initialize(
-            context,
-            "ADD PUBLIC TOKEN HERE ..",
-            SDKConfig(
+            context = context,
+            publicToken = "ADD PUBLIC TOKEN HERE ..",
+            sdkConfig = SDKConfig(
                 // capture sensors that produce data at 50 Hz
                 globalSamplingRate = 50,
                 // generate bundles every half second
