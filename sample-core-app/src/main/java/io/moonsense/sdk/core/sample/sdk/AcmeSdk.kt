@@ -10,9 +10,8 @@ import android.util.Log
 import io.moonsense.models.v2.Bundle
 import io.moonsense.sdk.Moonsense
 import io.moonsense.sdk.callback.MoonsenseCoreCallback
-import io.moonsense.sdk.config.SDKConfig
+import io.moonsense.sdk.config.SDKCoreConfig
 import io.moonsense.sdk.config.SensorType
-import io.moonsense.sdk.exception.MoonsenseException
 import io.moonsense.sdk.model.Session
 import okhttp3.HttpUrl
 import retrofit2.Call
@@ -73,7 +72,7 @@ class AcmeSdk(context: Context) {
             uploadData(acmeRequest)
         }
 
-        override fun onError(ex: MoonsenseException) {
+        override fun onError(ex: Exception) {
             Log.e(TAG, "Moonsense error reported $ex", ex)
         }
 
@@ -111,7 +110,7 @@ class AcmeSdk(context: Context) {
     init {
         Moonsense.initialize(
             context,
-            SDKConfig(
+            SDKCoreConfig(
                 // generate a bundle every second,
                 bundleGenerationInterval = ONE_SECOND_IN_MILLIS,
                 // only record accelerometer data
