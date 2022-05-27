@@ -11,7 +11,6 @@ import io.moonsense.sdk.Moonsense
 import io.moonsense.sdk.callback.MoonsenseCallback
 import io.moonsense.sdk.config.SDKConfig
 import io.moonsense.sdk.config.SensorType
-import io.moonsense.sdk.exception.MoonsenseException
 import io.moonsense.sdk.model.Session
 
 /**
@@ -42,7 +41,7 @@ object Payment {
                 )
             ),
             moonsenseCallback = object : MoonsenseCallback {
-                override fun onError(ex: MoonsenseException) {
+                override fun onError(ex: Exception) {
                     Toast.makeText(
                         context,
                         "Error: msg (${ex.message})",
