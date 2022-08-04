@@ -4,11 +4,11 @@
  */
 
 object AppConfig {
-    const val compileSdkVersion = 31
+    const val compileSdkVersion = 32
     const val minSdkVersion = 16
-    const val targetSdkVersion = 31
+    const val targetSdkVersion = 32
     const val versionCode = 1
-    const val versionName = "1.0.0"
+    const val versionName = "1.1.0"
     const val buildToolsVersion = "30.0.3"
     const val androidTestInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     const val jvmTarget = "11"
