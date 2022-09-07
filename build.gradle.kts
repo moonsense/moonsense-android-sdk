@@ -49,6 +49,9 @@ tasks.withType<DependencyUpdatesTask> {
             for (dependency in outdated.dependencies) {
                 println("${dependency.group} ${dependency.name} ${dependency.version} -> ${dependency.available.release ?: dependency.available.milestone}")
             }
+            if (gradle.current.isUpdateAvailable) {
+                println("Gradle can be updated to ${gradle.current.version}")
+            }
         }
     }
     rejectVersionIf {
