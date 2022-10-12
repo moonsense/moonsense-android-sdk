@@ -9,6 +9,7 @@ plugins {
 }
 
 android {
+    namespace = "io.moonsense.sample.payment.sdk"
     compileSdk = AppConfig.compileSdkVersion
 
     defaultConfig {
@@ -26,6 +27,19 @@ android {
             )
         }
     }
+
+    flavorDimensions.add("sample")
+    productFlavors {
+        create("standard") {
+            dimension = "sample"
+            isDefault = true
+        }
+
+        create("features") {
+            dimension = "sample"
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -37,6 +51,7 @@ android {
 
 dependencies {
     implementation("io.moonsense:android-sdk:${AppConfig.versionName}")
+    "featuresImplementation"("io.moonsense:android-features-sdk:${Versions.moonsenseFeatures}")
     implementation("androidx.legacy:legacy-support-v4:${Versions.androidXLegacySupport}")
     implementation("androidx.fragment:fragment-ktx:${Versions.fragmentKtx}")
     implementation("com.google.android.material:material:${Versions.material}")

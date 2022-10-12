@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace = "io.moonsense.sdk.sample"
     compileSdk = AppConfig.compileSdkVersion
     buildToolsVersion = AppConfig.buildToolsVersion
 
