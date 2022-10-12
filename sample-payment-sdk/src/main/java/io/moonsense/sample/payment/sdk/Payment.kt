@@ -37,7 +37,7 @@ object Payment {
                     SensorType.TOUCH,
                     SensorType.KEY_PRESS,
                     SensorType.FOCUS_CHANGE,
-                    SensorType.INPUT_CHANGE
+                    SensorType.TEXT_CHANGE
                 )
             ),
             moonsenseCallback = object : MoonsenseCallback {
