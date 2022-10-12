@@ -9,6 +9,7 @@ plugins {
 }
 
 android {
+    namespace = "io.moonsense.sample.payment.app"
     compileSdk = AppConfig.compileSdkVersion
     buildToolsVersion = AppConfig.buildToolsVersion
 
@@ -28,6 +29,18 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+    }
+
+    flavorDimensions.add("sample")
+    productFlavors {
+        create("standard") {
+            dimension = "sample"
+            isDefault = true
+        }
+
+        create("features") {
+            dimension = "sample"
         }
     }
 

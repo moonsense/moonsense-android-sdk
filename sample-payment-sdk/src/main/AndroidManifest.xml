@@ -4,7 +4,4 @@
   ~ Created by rahul on 9/16/21, 8:40 AM
   -->
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.moonsense.sample.payment.sdk">
-
-</manifest>
+<manifest/>
