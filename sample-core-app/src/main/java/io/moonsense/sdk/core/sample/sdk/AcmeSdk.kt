@@ -10,7 +10,7 @@ import android.util.Log
 import io.moonsense.models.v2.Bundle
 import io.moonsense.sdk.Moonsense
 import io.moonsense.sdk.callback.MoonsenseCoreCallback
-import io.moonsense.sdk.config.SDKCoreConfig
+import io.moonsense.sdk.config.SDKConfig
 import io.moonsense.sdk.config.SensorType
 import io.moonsense.sdk.model.Session
 import okhttp3.HttpUrl
@@ -110,7 +110,7 @@ class AcmeSdk(context: Context) {
     init {
         Moonsense.initialize(
             context,
-            SDKCoreConfig(
+            SDKConfig(
                 // generate a bundle every second,
                 bundleGenerationInterval = ONE_SECOND_IN_MILLIS,
                 // only record accelerometer data
