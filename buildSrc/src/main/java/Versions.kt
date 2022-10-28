@@ -18,5 +18,5 @@ object Versions {
     const val gson = "2.10"
     const val mockWebServer = "4.10.0"
     const val gradleVersionsPlugin = "0.43.0"
-    const val moonsenseFeatures = "0.1.0"
+    const val moonsenseFeatures = "0.1.1"
 }
