@@ -50,5 +50,4 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}")
     testImplementation("junit:junit:${Versions.junit}")
     androidTestImplementation("androidx.test.ext:junit:${Versions.junitAndroidX}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${Versions.espressoCore}")
 }
