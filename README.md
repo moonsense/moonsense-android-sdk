@@ -20,7 +20,7 @@ maven {
 
 ## Version History
 
-The latest release of the SDK is `1.5.0`. Details about the current and past releases can be found in the [Releases](https://github.com/moonsense/moonsense-android-sdk/releases) section.
+The latest release of the SDK is `1.6.0`. Details about the current and past releases can be found in the [Releases](https://github.com/moonsense/moonsense-android-sdk/releases) section.
 
 ## Integration
 
