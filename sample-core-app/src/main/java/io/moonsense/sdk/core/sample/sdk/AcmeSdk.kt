@@ -9,7 +9,7 @@ import android.content.Context
 import android.util.Log
 import io.moonsense.models.v2.Bundle
 import io.moonsense.sdk.Moonsense
-import io.moonsense.sdk.callback.MoonsenseCoreCallback
+import io.moonsense.sdk.callback.MoonsenseCallback
 import io.moonsense.sdk.config.SDKConfig
 import io.moonsense.sdk.config.SensorType
 import io.moonsense.sdk.model.Session
@@ -32,7 +32,7 @@ import java.util.UUID
  * a corresponding Acme Session.
  *
  * This example also demonstrates the handling of
- * the Bundle data received via the [MoonsenseCoreCallback].
+ * the Bundle data received via the [MoonsenseCallback].
  */
 class AcmeSdk(context: Context) {
 
@@ -53,7 +53,7 @@ class AcmeSdk(context: Context) {
         .addConverterFactory(GsonConverterFactory.create())
         .build().create(AcmeService::class.java)
 
-    private val moonsenseCoreCallback = object : MoonsenseCoreCallback {
+    private val moonsenseCallback = object : MoonsenseCallback {
 
         override fun onBundleCreated(session: Session, bundle: Bundle) {
             // retrieve the Acme Session
@@ -116,7 +116,7 @@ class AcmeSdk(context: Context) {
                 // only record accelerometer data
                 sensorTypes = listOf(SensorType.ACCELEROMETER)
             ),
-            moonsenseCoreCallback
+            moonsenseCallback
         )
     }
 
