@@ -20,7 +20,7 @@ maven {
 
 ## Version History
 
-The latest release of the SDK is `1.5.0`. Details about the current and past releases can be found in the [Releases](https://github.com/moonsense/moonsense-android-sdk/releases) section.
+The latest release of the SDK is `1.6.0`. Details about the current and past releases can be found in the [Releases](https://github.com/moonsense/moonsense-android-sdk/releases) section.
 
 ## Integration
 
@@ -59,7 +59,7 @@ The SDK reference can be found at [android.sdk-docs.moonsense.io](https://androi
 This repo includes three sample apps:
 
 - `sample-app` - This sample app demonstrates the use of the Moonsense Android SDK within an application context. The example in this case is quite simple and minimal and can serve as a good starting point for developers looking for a quick integration.
-- `sample-payment-app` - This sample app demonstrates the library usage of the Moonsense Android SDK. Note that the `sample-payment-app` does not directly depend on the Moonsense Android SDK. Instead it includes a dependency to the `sample-payment-sdk` which then packages the Moonsense Android SDK. The app developer here does not have any visibility into the Moonsense Android SDK as they only interface with the `sample-payment-sdk`. The example is useful for SDK/library developers looking to integrate the Moonsense Android SDK. This sample app comes in two variants, the features variant records a session with the [Features SDK](https://docs.moonsense.io/articles/sdk/feature-generation) and the standard variant does not.
+- `sample-payment-app` - This sample app demonstrates the library usage of the Moonsense Android SDK. Note that the `sample-payment-app` does not directly depend on the Moonsense Android SDK. Instead it includes a dependency to the `sample-payment-sdk` which then packages the Moonsense Android SDK. The app developer here does not have any visibility into the Moonsense Android SDK as they only interface with the `sample-payment-sdk`. The example is useful for SDK/library developers looking to integrate the Moonsense Android SDK. This sample app comes in two variants, the features variant records a session with the [Features SDK](https://docs.moonsense.io/articles/sdk/feature-generation) and [Network Telemetry](https://docs.moonsense.io/articles/network-telemetry/getting-started) configuration while the standard variant does not.
 - `sample-core-app` - This sample app shows how to integrate a variation of the Moonsense Android SDK called the Core SDK. For all intents and purposes the standard Android SDK (referred to as the Cloud SDK) should suffice for a majority of use cases. In case you do need specialized use of the Moonsense SDK contact [support@moonsense.io](mailto:support@moonsense.io) for access. Additional information regarding the Core SDK can be found here - [Advanced Usage](https://docs.moonsense.io/articles/sdk/advanced-usage).
 
 ## Terms Of Service

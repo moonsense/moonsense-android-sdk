@@ -42,7 +42,6 @@ android {
 
 dependencies {
     implementation("io.moonsense:android-core-sdk:${AppConfig.versionName}")
-    implementation("com.squareup.wire:wire-runtime:${Versions.squareWireRuntime}")
     implementation("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
     implementation("com.squareup.retrofit2:converter-gson:${Versions.retrofit}")
     implementation("com.google.code.gson:gson:${Versions.gson}")
