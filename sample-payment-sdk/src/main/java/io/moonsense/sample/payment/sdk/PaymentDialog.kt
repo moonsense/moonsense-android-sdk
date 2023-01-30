@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 import android.widget.FrameLayout
-import io.moonsense.sample.payment.sdk.generators.FeatureConfigFactory
+import io.moonsense.sample.payment.sdk.generators.FeatureGeneratorFactory
 import io.moonsense.sdk.config.SessionConfig
 import java.lang.StringBuilder
 
@@ -164,15 +164,14 @@ class PaymentDialog(private val paymentListener: PaymentListener) :
             listOf(PAYMENT_SDK_LABEL_ALL_SENSORS)
         )
 
-        val sessionConfig = FeatureConfigFactory.getSessionConfig()
-        // if there is a session config available with feature generators then
-        // record a session with features
-        if (sessionConfig != null) {
+        val featureGenerators = FeatureGeneratorFactory.getFeatureGenerators()
+        // if there are available feature generators then record a session with features
+        if (featureGenerators.isNotEmpty()) {
             // start a shorter session
             sessionWithFeatures = Moonsense.startSession(
                 TimeUnit.SECONDS.toMillis(FEATURES_SESSION_DURATION_SECONDS),
-                // provide the requested config
-                sessionConfig,
+                // provide the requested generators
+                SessionConfig(featureGenerators = featureGenerators),
                 listOf(PAYMENT_SDK_LABEL_FEATURES)
             )
         }
