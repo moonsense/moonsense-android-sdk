@@ -4,8 +4,8 @@
  */
 
 object Versions {
-    const val gradleTools = "7.4.0"
-    const val kotlinVersion = "1.8.0"
+    const val gradleTools = "7.4.2"
+    const val kotlinVersion = "1.8.10"
     const val junit = "4.13.2"
     const val junitAndroidX = "1.1.5"
     const val constraintLayout = "2.1.4"
@@ -15,6 +15,6 @@ object Versions {
     const val retrofit = "2.9.0"
     const val gson = "2.10.1"
     const val mockWebServer = "4.10.0"
-    const val gradleVersionsPlugin = "0.44.0"
+    const val gradleVersionsPlugin = "0.46.0"
     const val moonsenseFeatures = "0.2.0"
 }
