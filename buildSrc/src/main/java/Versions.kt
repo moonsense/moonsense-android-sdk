@@ -9,7 +9,7 @@ object Versions {
     const val junit = "4.13.2"
     const val junitAndroidX = "1.1.5"
     const val constraintLayout = "2.1.4"
-    const val fragmentKtx = "1.5.5"
+    const val fragmentKtx = "1.5.6"
     const val androidXLegacySupport = "1.0.0"
     const val material = "1.8.0"
     const val retrofit = "2.9.0"
